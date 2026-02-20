@@ -3,14 +3,14 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useRef } from "react";
 
-export type UseQueryProps = {
+export type UseQueryParamsProps = {
     initialQuery?: {
         name: string;
         value: string | number | boolean;
     }[];
 };
 
-export const useQuery = ({ initialQuery }: UseQueryProps = {}) => {
+export const useQueryParams = ({ initialQuery }: UseQueryParamsProps = {}) => {
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const router = useRouter();
@@ -25,7 +25,7 @@ export const useQuery = ({ initialQuery }: UseQueryProps = {}) => {
     );
 
     const set = useCallback(
-        (name: string, value: string): void => {
+        (name: string, value: string | number | boolean): void => {
             const params = new URLSearchParams(searchParams.toString());
             params.set(name, String(value));
             update(params);
@@ -34,8 +34,13 @@ export const useQuery = ({ initialQuery }: UseQueryProps = {}) => {
     );
 
     const get = useCallback(
-        (name: string): string | null => {
-            return searchParams.get(name);
+        <T = string>(name: string, callback?: (value: string) => T): T | null => {
+            const value = searchParams.get(name);
+
+            if (value === null) return null;
+            if (callback) return callback(value);
+
+            return value as T;
         },
         [searchParams],
     );

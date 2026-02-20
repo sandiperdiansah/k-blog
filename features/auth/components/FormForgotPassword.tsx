@@ -1,6 +1,7 @@
 "use client";
 
-import { Field, Link } from "@/components/ui";
+import { Field } from "@/components/ui/field";
+import { Link } from "@/components/ui/link";
 import { Box, Button, Input, Text } from "@chakra-ui/react";
 
 export const FormForgotPassword = () => {

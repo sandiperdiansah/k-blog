@@ -1,6 +1,7 @@
 "use client";
 
-import { Field, PasswordInput } from "@/components/ui";
+import { Field } from "@/components/ui/field";
+import { PasswordInput } from "@/components/ui/password-input";
 import { Box, Button, IconButton, Input, InputGroup, Span } from "@chakra-ui/react";
 import { FiSend } from "react-icons/fi";
 

@@ -1,7 +1,10 @@
 "use client";
 
 import { useGlobalLoading } from "@/components/global-loading";
-import { Field, Link, PasswordInput, toaster } from "@/components/ui";
+import { Field } from "@/components/ui/field";
+import { Link } from "@/components/ui/link";
+import { PasswordInput } from "@/components/ui/password-input";
+import { toaster } from "@/components/ui/toaster";
 import { signUpAction } from "@/features/auth/auth.action";
 import { Box, Button, Input, Text } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
