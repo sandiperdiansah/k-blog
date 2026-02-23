@@ -1,0 +1,66 @@
+{
+    "author": {
+        "email": "sandiperdiansah.info@gmail.com",
+        "name": "Sandi Perdiansah"
+    },
+    "dependencies": {
+        "@chakra-ui/react": "^3.33.0",
+        "@emotion/react": "^11.14.0",
+        "@prisma/adapter-pg": "^7.4.1",
+        "@prisma/client": "^7.4.1",
+        "@react-email/components": "^1.0.8",
+        "@tanstack/react-query": "^5.90.21",
+        "@tiptap/react": "^3.20.0",
+        "@tiptap/starter-kit": "^3.20.0",
+        "better-auth": "^1.4.18",
+        "cloudinary": "^2.9.0",
+        "dotenv": "^17.3.1",
+        "next": "16.1.6",
+        "next-themes": "^0.4.6",
+        "pg": "^8.18.0",
+        "react": "19.2.3",
+        "react-dom": "19.2.3",
+        "react-icons": "^5.5.0",
+        "react-share-kit": "^1.1.0",
+        "resend": "^6.9.2",
+        "use-debounce": "^10.1.0",
+        "valibot": "^1.2.0",
+        "zustand": "^5.0.11"
+    },
+    "devDependencies": {
+        "@types/node": "^20",
+        "@types/pg": "^8.16.0",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "eslint": "^9",
+        "eslint-config-next": "16.1.6",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.2.7",
+        "prettier": "^3.8.1",
+        "prisma": "^7.4.1",
+        "prisma-valibot-generator": "^1.2.0",
+        "tsx": "^4.21.0",
+        "typescript": "^5"
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.{json,md,css}": [
+            "prettier --write"
+        ]
+    },
+    "name": "kv-blog",
+    "private": true,
+    "scripts": {
+        "build": "next build --webpack",
+        "dev": "next dev --webpack",
+        "format": "prettier --write .",
+        "lint": "eslint",
+        "postinstall": "prisma generate",
+        "prepare": "husky",
+        "start": "next start"
+    },
+    "version": "0.1.0"
+}
